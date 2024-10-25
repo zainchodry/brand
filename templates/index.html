@@ -1,0 +1,17 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'ok.css' %}">
+        <title>HOME PAGE</title>
+        <body>
+            <h1 class="main">WELCOME TO OUR WEBSITE</h1>
+            <form action="{% url 'saveform'%}" method="post">
+                <div class="container">
+                    {% csrf_token %}  
+                {{form.as_p}}
+                <input type="submit" value="submit" class="main">
+            </form>
+        </div>
+        </body>
+    </head>
+</html>
